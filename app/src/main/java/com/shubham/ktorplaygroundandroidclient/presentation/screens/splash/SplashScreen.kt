@@ -24,9 +24,13 @@ import com.shubham.ktorplaygroundandroidclient.R
 import com.shubham.ktorplaygroundandroidclient.ui.theme.Purple500
 import com.shubham.ktorplaygroundandroidclient.ui.theme.Purple700
 
-
 @Composable
-fun SplashScreen(navController: NavHostController) {
+fun SplashScreen(
+    navController: NavHostController,
+    splashViewModel: SplashViewModel = hiltViewModel()
+) {
+
+    val onBoardingCompleted by splashViewModel.onBoardingCompleted.collectAsState()
 
     val degrees = remember { Animatable(0f) }
 
@@ -38,6 +42,12 @@ fun SplashScreen(navController: NavHostController) {
                 delayMillis = 200
             )
         )
+        navController.popBackStack()
+        if (onBoardingCompleted) {
+            navController.navigate(Screen.Home.route)
+        } else {
+            navController.navigate(Screen.Welcome.route)
+        }
     }
 
     Splash(degrees = degrees.value)
