@@ -1,13 +1,12 @@
 package com.shubham.ktorplaygroundandroidclient.di
 
 import android.content.Context
-import com.example.borutoapp.data.repository.DataStoreOperationsImpl
-import com.example.borutoapp.data.repository.Repository
-import com.example.borutoapp.domain.repository.DataStoreOperations
-import com.example.borutoapp.domain.use_cases.UseCases
-import com.example.borutoapp.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
-import com.example.borutoapp.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
-import com.example.borutoapp.domain.use_cases.save_onboarding.SaveOnBoardingUseCase
+import com.shubham.ktorplaygroundandroidclient.data.repository.DataStoreOperationsImpl
+import com.shubham.ktorplaygroundandroidclient.data.repository.Repository
+import com.shubham.ktorplaygroundandroidclient.domain.repository.DataStoreOperations
+import com.shubham.ktorplaygroundandroidclient.domain.use_cases.UseCases
+import com.shubham.ktorplaygroundandroidclient.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
+import com.shubham.ktorplaygroundandroidclient.domain.use_cases.save_onboarding.SaveOnBoardingUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +32,6 @@ object RepositoryModule {
         return UseCases(
             saveOnBoardingUseCase = SaveOnBoardingUseCase(repository),
             readOnBoardingUseCase = ReadOnBoardingUseCase(repository),
-            getAllHeroesUseCase = GetAllHeroesUseCase(repository)
         )
     }
 

@@ -7,9 +7,9 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.borutoapp.domain.repository.DataStoreOperations
-import com.example.borutoapp.util.Constants.PREFERENCES_KEY
-import com.example.borutoapp.util.Constants.PREFERENCES_NAME
+import com.shubham.ktorplaygroundandroidclient.domain.repository.DataStoreOperations
+import com.shubham.ktorplaygroundandroidclient.util.Constants.PREFERENCES_KEY
+import com.shubham.ktorplaygroundandroidclient.util.Constants.PREFERENCES_NAME
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
